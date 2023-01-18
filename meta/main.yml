@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Thomas Mignot & GPT3
-  role_name: gitlab-runner
+  role_name: gitlab_runner
   description: Install gitlab-runner and register a runner
   company: Electis
   license: MIT

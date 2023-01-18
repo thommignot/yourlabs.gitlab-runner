@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Thomas Mignot & GPT3
+  role_name: Register Gitlab Runner
+  description: Install gitlab-runner and register a runner
+  company: Electis
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+  - name: GenericLinux
+    versions:
+    - all
+
+dependencies: []

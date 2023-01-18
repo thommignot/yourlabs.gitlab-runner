@@ -1,0 +1,25 @@
+---
+
+- name: Install gitlab-runner
+  apt:
+    name: gitlab-runner
+    state: latest
+  become: yes
+- name: Install template
+  template:
+    src: runner.template.conf
+    dest: /etc/gitlab-runner/template.conf.2
+    owner: deploy
+- name: Configure gitlab-runner
+  become: yes
+  shell: gitlab-runner register \
+    --template-config=/etc/gitlab-runner/template.conf.2 \
+    --name {{ci_name }} \
+    --registration-token {{ci_token}} \
+    --non-interactive
+- name: Start gitlab-runner
+  become: yes
+  service:
+    name: gitlab-runner
+    state: started
+    enabled: yes
